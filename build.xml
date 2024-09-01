@@ -1,0 +1,25 @@
+<project name="GerenciaBanco" default="compile" basedir=".">
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="jar.dir" value="dist"/>
+    <property name="main-class" value="com.mycompany.gerenciabanco.Main"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${jar.dir}"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/GerenciaBanco.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
