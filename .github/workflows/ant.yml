@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: 11
-        distribution: 'adoptopenjdk' # Verifique o valor do campo `distribution`
-        
+        distribution: 'adopt-openjdk'  # Corrigido para um valor válido
+
     - name: Build with Ant
       run: ant
